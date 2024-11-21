@@ -143,3 +143,10 @@ span.highlight {
 .right-align {
   margin-left: auto; 
 }
+
+.icon {
+  width: 1em; /* 图标宽度设置为当前字体大小的1倍 */
+  height: 1em; /* 图标高度设置为当前字体大小的1倍 */
+  vertical-align: middle; /* 确保图标与文本垂直居中对齐 */
+  margin-right: 0.em; /* 在图标和文本之间添加一些空间 */
+}
