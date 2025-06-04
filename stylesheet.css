@@ -150,3 +150,37 @@ span.highlight {
   vertical-align: middle; /* 确保图标与文本垂直居中对齐 */
   margin-right: 0.em; /* 在图标和文本之间添加一些空间 */
 }
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  opacity: 0.8;
+}
+.button.paper {
+  background-color: #007bff;
+}
+.button.project {
+  background-color: #28a745;
+}
+.button.code {
+  background-color: #17a2b8;
+}
+.button.bibtex {
+  background-color: #dc3545;
+}
