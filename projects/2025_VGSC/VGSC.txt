@@ -1,0 +1,5 @@
+@article{zhu2025neural,
+  title   = {VGSC: Video-based Gaussian Splat Coding},
+  author  = {ZHU, Zhiwei and Li, Sicheng and LIAO, Yiyi and YU, Lu},
+  year    = {2025},
+}
