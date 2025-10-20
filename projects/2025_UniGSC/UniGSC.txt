@@ -1,0 +1,5 @@
+@article{zhu2025neural,
+  title   = {UniGSC: UniGSC: Unified Gaussian Splats Codec},
+  author  = {ZHU, Zhiwei and Li, Sicheng and LIAO, Yiyi and YU, Lu},
+  year    = {2025},
+}
