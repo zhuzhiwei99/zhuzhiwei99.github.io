@@ -1,0 +1,8 @@
+@inproceedings{zhu2025dual,
+    author={Zhu, Zhiwei and Liao Yiyi and Yu, Lu},
+    booktitle={2026 IEEE International Symposium on Circuits and Systems (ISCAS)}, 
+    title={Dual-Hilbert Scan for Efficient Video-Based Gaussian Splatting Compression}, 
+    year={2026},
+    pages={1-6},
+    organization={IEEE},
+}

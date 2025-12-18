@@ -184,3 +184,31 @@ span.highlight {
 .button.bibtex {
   background-color: #dc3545;
 }
+
+/* 定义项目预览图的基础样式 */
+.project-teaser {
+    /* 1. 基础设置 */
+    border-radius: 8px; /* 圆角，让阴影效果更自然 */
+
+    /* 2. 初始阴影状态 (立体的基础) */
+    /* x偏移 y偏移 模糊半径 颜色(黑色, 30%透明度) */
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3);
+
+    /* 3. 关键：平滑过渡动画 */
+    /* 告诉浏览器：当 transform(变形) 和 box-shadow(阴影) 发生变化时，用0.3秒的时间柔和地过渡 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* 可选：如果图片本身不是块级元素，这有助于transform生效 */
+    display: block;
+}
+
+/* 定义鼠标悬停时的样式 */
+.project-teaser:hover {
+    /* 4. 放大动作 */
+    /* scale(1.1) 表示放大到原始尺寸的 110% */
+    transform: scale(1.2);
+
+    /* 5. 悬停时的阴影优化 (可选) */
+    /* 放大时，让阴影变得更大、更淡，营造出图片“浮起来靠近屏幕”的强烈立体感 */
+    box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.4);
+}
