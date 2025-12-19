@@ -1,13 +1,15 @@
-/* ================= VARIABLES ================= */
+/* ================= 1. VARIABLES & THEME ================= */
 :root {
-    /* 更加现代的配色方案 */
+    /* 核心配色 */
     --primary-color: #2563eb; /* 科技蓝 */
     --primary-hover: #1d4ed8;
-    --text-main: #1e293b;     /* 深蓝灰，比纯黑更有质感 */
+    --text-main: #1e293b;     /* 深蓝灰 */
     --text-sub: #64748b;
     --bg-body: #ffffff;
     --bg-card: #ffffff;
     --border-color: #e2e8f0;
+    
+    /* 阴影系统 */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -27,8 +29,9 @@
     --border-color: #334155;
 }
 
-/* ================= RESET ================= */
+/* ================= 2. RESET & BASE ================= */
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
     font-family: var(--font-body);
     color: var(--text-main);
@@ -36,17 +39,20 @@ body {
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
 }
+
 a { text-decoration: none; color: inherit; transition: 0.2s; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; }
 
-/* ================= LAYOUT ================= */
+/* ================= 3. LAYOUT ================= */
 .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 60px 24px;
 }
+
 .section { margin-bottom: 60px; }
+
 .section-title {
     font-family: var(--font-heading);
     font-size: 1.5rem;
@@ -57,9 +63,16 @@ img { max-width: 100%; display: block; }
     display: flex;
     align-items: center;
 }
+
 .icon-prefix { margin-right: 10px; color: var(--primary-color); }
 
-/* ================= HERO SECTION ================= */
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* ================= 4. HERO SECTION ================= */
 .hero-section {
     display: flex;
     align-items: center;
@@ -67,7 +80,9 @@ img { max-width: 100%; display: block; }
     gap: 40px;
     margin-bottom: 60px;
 }
+
 .hero-content { flex: 1; }
+
 .name {
     font-family: var(--font-heading);
     font-size: 2.5rem;
@@ -75,20 +90,21 @@ img { max-width: 100%; display: block; }
     margin-bottom: 16px;
     color: var(--text-main);
 }
+
 .cn-name { font-weight: 400; font-size: 1.8rem; color: var(--text-sub); }
+
 .bio { font-size: 1.1rem; margin-bottom: 8px; }
 .bio a { color: var(--primary-color); font-weight: 600; border-bottom: 1px dashed transparent; }
 .bio a:hover { border-bottom-color: var(--primary-color); }
-.bio-sub { color: var(--text-sub); font-size: 0.95rem; margin-bottom: 24px; }
 
-/* 社交按钮组 (优化点) */
-.social-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.social-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+
 .social-btn {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     padding: 6px 14px;
-    border-radius: 50px; /* 胶囊形状 */
+    border-radius: 50px;
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     font-size: 0.9rem;
@@ -96,6 +112,7 @@ img { max-width: 100%; display: block; }
     color: var(--text-sub);
     box-shadow: var(--shadow-sm);
 }
+
 .social-btn:hover {
     color: var(--primary-color);
     border-color: var(--primary-color);
@@ -103,30 +120,42 @@ img { max-width: 100%; display: block; }
     box-shadow: var(--shadow-md);
 }
 
-.hero-avatar-wrapper {
-    width: 200px; height: 200px; flex-shrink: 0;
-}
+.sb-small { padding: 4px 12px; font-size: 0.85rem; }
+
+.hero-avatar-wrapper { width: 200px; height: 200px; flex-shrink: 0; }
+
 .avatar {
     width: 100%; height: 100%;
     object-fit: cover;
-    border-radius: 20px; /* 方圆形更现代 */
+    border-radius: 20px;
     box-shadow: var(--shadow-lg);
     border: 3px solid var(--bg-card);
 }
 
-/* ================= PAPER CARDS (Scrollable) ================= */
-/* 滚动窗口样式 */
-.scroll-window {
-    max-height: 850px; /* 限制高度 */
-    overflow-y: auto;
-    padding: 4px; /* 避免阴影被切掉 */
-    padding-right: 12px;
-}
-/* 自定义滚动条 */
-.scroll-window::-webkit-scrollbar { width: 6px; }
-.scroll-window::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
-[data-theme="dark"] .scroll-window::-webkit-scrollbar-thumb { background: #475569; }
+/* ================= 5. NEWS COMPONENT ================= */
+/* Note: 滚动功能已移交 .scrollable 处理 */
+.news-list { list-style: none; padding: 0; margin: 0; }
 
+.news-list li {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    align-items: baseline;
+}
+
+.news-date {
+    flex-shrink: 0;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--primary-color);
+    width: 90px;
+}
+
+.news-content { color: var(--text-main); }
+
+/* ================= 6. PAPER CARD COMPONENT ================= */
 .paper-card {
     display: flex;
     gap: 24px;
@@ -137,20 +166,20 @@ img { max-width: 100%; display: block; }
     margin-bottom: 24px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .paper-card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
-    border-color: var(--primary-color); /* hover时边框变色 */
+    border-color: var(--primary-color);
 }
 
-/* 图片加宽且自适应 (优化点) */
 .paper-img-wrapper {
-    flex: 0 0 35%; /* 占用 35% 宽度 */
+    flex: 0 0 35%;
     min-width: 200px;
 }
+
 .paper-img-wrapper img {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     min-height: 140px;
     object-fit: cover;
     border-radius: 8px;
@@ -158,13 +187,22 @@ img { max-width: 100%; display: block; }
 }
 
 .paper-info { flex: 1; display: flex; flex-direction: column; justify-content: center; }
-.paper-title { font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 6px; line-height: 1.4; color: var(--text-main); }
+
+.paper-title { 
+    font-family: var(--font-heading); 
+    font-size: 1.15rem; 
+    margin-bottom: 6px; 
+    line-height: 1.4; 
+    color: var(--text-main); 
+}
+
 .paper-authors { font-size: 0.95rem; color: var(--text-sub); margin-bottom: 4px; }
 .paper-venue { font-weight: 700; color: var(--primary-color); font-size: 0.9rem; margin-bottom: 10px; }
 .paper-desc { font-size: 0.9rem; color: var(--text-main); margin-bottom: 12px; line-height: 1.5; }
 
-/* 标签按钮 */
+/* Tags */
 .tags-row { display: flex; gap: 8px; margin-top: auto; }
+
 .tag {
     display: inline-flex;
     align-items: center;
@@ -177,6 +215,7 @@ img { max-width: 100%; display: block; }
     color: #fff;
     background: #334155;
 }
+
 .tag:hover { opacity: 0.9; }
 .tag-pdf { background-color: #ef4444; }
 .tag-code { background-color: #0f172a; }
@@ -184,49 +223,85 @@ img { max-width: 100%; display: block; }
 .tag-bib { background-color: #0ea5e9; }
 .tag-page { background-color: #10b981; }
 
-/* ================= LISTS & GRID ================= */
-.grid-2-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
+/* ================= 7. LIST COMPONENTS (Experience/Honors) ================= */
 .list-wrapper { display: flex; flex-direction: column; gap: 20px; }
 .list-item { display: flex; gap: 16px; align-items: flex-start; }
-.list-logo { width: 48px; height: 48px; object-fit: contain; border-radius: 6px; background: #fff; padding: 2px; border: 1px solid var(--border-color); }
+
+.list-logo { 
+    width: 48px; height: 48px; 
+    object-fit: contain; 
+    border-radius: 6px; 
+    background: #fff; 
+    padding: 2px; 
+    border: 1px solid var(--border-color); 
+}
+
 .list-content { flex: 1; }
 .list-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
 .list-org { font-weight: 700; font-family: var(--font-heading); }
 .list-date { font-size: 0.85rem; color: var(--text-sub); }
 .list-role { font-weight: 600; font-size: 0.95rem; color: var(--text-main); }
-.list-sub { font-size: 0.85rem; color: var(--text-sub); }
 
-.simple-list li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-.simple-list li::before {
-    content: "•";
-    color: var(--primary-color);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
+/* Bilingual Row Style */
+.bilingual-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--border-color);
 }
 
-/* ================= FOOTER & TOGGLE ================= */
+.bilingual-row:last-child {
+    border-bottom: none; margin-bottom: 0; padding-bottom: 0;
+}
+
+.content-wrapper { flex: 1; margin-right: 20px; }
+
+.title-en {
+    font-weight: 600; color: var(--text-main);
+    font-size: 0.95rem; line-height: 1.3; margin-bottom: 2px;
+}
+
+.title-cn { font-size: 0.85rem; color: var(--text-sub); line-height: 1.4; }
+
+.date-right {
+    flex-shrink: 0;
+    font-family: var(--font-heading);
+    font-size: 0.9rem; color: var(--text-sub);
+    text-align: right;
+    font-feature-settings: "tnum";
+    padding-top: 2px;
+}
+
+/* ================= 8. UNIFIED SCROLL SYSTEM (Utility) ================= */
+.scrollable {
+    overflow-y: auto;
+    padding-right: 10px;
+    scroll-behavior: smooth;
+    padding-bottom: 5px; 
+}
+
+/* Custom Scrollbar */
+.scrollable::-webkit-scrollbar { width: 5px; }
+.scrollable::-webkit-scrollbar-track { background: transparent; }
+.scrollable::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+.scrollable::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+[data-theme="dark"] .scrollable::-webkit-scrollbar-thumb { background: #475569; }
+
+/* Height Variants */
+.h-news { max-height: 180px; }   /* ~5 items text */
+.h-list { max-height: 320px; }   /* ~5 items detailed list */
+.h-papers { max-height: 850px; } /* ~3-4 cards */
+
+/* ================= 9. FOOTER & TOGGLE ================= */
 footer {
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--text-sub);
-    padding-top: 40px;
-    border-top: 1px solid var(--border-color);
-    margin-top: 40px;
+    text-align: center; font-size: 0.9rem; color: var(--text-sub);
+    padding-top: 40px; border-top: 1px solid var(--border-color); margin-top: 40px;
 }
 
-.theme-toggle-wrapper {
-    position: fixed; top: 20px; right: 20px; z-index: 100;
-}
+.theme-toggle-wrapper { position: fixed; top: 20px; right: 20px; z-index: 100; }
+
 .icon-btn {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -239,123 +314,16 @@ footer {
     box-shadow: var(--shadow-md);
 }
 
-/* ================= MOBILE RESPONSIVE ================= */
+/* ================= 10. MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
     .container { padding: 40px 20px; }
     
-    /* Hero */
     .hero-section { flex-direction: column-reverse; text-align: center; }
     .social-row { justify-content: center; }
     
-    /* Paper Card 变为垂直堆叠 */
     .paper-card { flex-direction: column; gap: 15px; }
     .paper-img-wrapper { flex: auto; width: 100%; }
-    .paper-img-wrapper img { height: 200px; } /* 手机上固定高度 */
+    .paper-img-wrapper img { height: 200px; }
     
-    /* Grid */
     .grid-2-col { grid-template-columns: 1fr; gap: 0; }
-}
-
-/* ================= BILINGUAL LIST STYLE (New) ================= */
-/* 每一行的容器 */
-.bilingual-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* 顶部对齐，防止多行文字导致时间错位 */
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px dashed var(--border-color); /*以此分割每条记录，更清晰 */
-}
-
-/* 去掉最后一个元素的底边框 */
-.bilingual-row:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-/* 左侧文字容器 */
-.content-wrapper {
-    flex: 1; /* 占据剩余空间 */
-    margin-right: 20px; /* 给右侧时间留出空隙 */
-}
-
-/* 英文标题 */
-.title-en {
-    font-weight: 600;
-    color: var(--text-main);
-    font-size: 0.95rem;
-    line-height: 1.3;
-    margin-bottom: 2px;
-}
-
-/* 中文标题 */
-.title-cn {
-    font-size: 0.85rem;
-    color: var(--text-sub);
-    line-height: 1.4;
-}
-
-/* 右侧时间 */
-.date-right {
-    flex-shrink: 0; /* 防止时间被压缩换行 */
-    font-family: var(--font-heading); /* 使用数字友好的字体 */
-    font-size: 0.9rem;
-    color: var(--text-sub);
-    text-align: right;
-    font-feature-settings: "tnum"; /* 等宽数字，对齐更整齐 */
-    padding-top: 2px; /* 视觉上与英文标题对齐 */
-}
-
-/* ================= NEWS SECTION ================= */
-.news-window {
-    max-height: 180px; /* 限制高度，约显示 4-5 条，超过则滚动 */
-    overflow-y: auto;
-    padding-right: 10px; /* 防止文字紧贴滚动条 */
-}
-
-/* 自定义滚动条 (保持与 Paper Window 一致) */
-.news-window::-webkit-scrollbar { width: 4px; }
-.news-window::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
-[data-theme="dark"] .news-window::-webkit-scrollbar-thumb { background: #475569; }
-
-.news-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.news-list li {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 12px;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    align-items: baseline; /* 保证日期与第一行文字对齐 */
-}
-
-/* 日期样式：加粗，使用主色调，等宽字体保证对齐 */
-.news-date {
-    flex-shrink: 0;
-    font-family: var(--font-heading); /* 使用 Inter 字体 */
-    font-weight: 700;
-    color: var(--primary-color);
-    width: 90px; /* 固定宽度，确保冒号对齐 */
-}
-
-.news-content {
-    color: var(--text-main);
-}
-
-/* 高亮关键词 (会议名等) */
-.highlight {
-    color: var(--text-main);
-    font-weight: 700;
-    background: rgba(37, 99, 235, 0.1); /* 给重要文字加一点极淡的背景色 */
-    padding: 0 4px;
-    border-radius: 4px;
-}
-[data-theme="dark"] .highlight {
-    background: rgba(96, 165, 250, 0.2);
-    color: #fff;
 }
