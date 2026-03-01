@@ -1,0 +1,8 @@
+@inproceedings{zhu2026low,
+    author={Zhu, Zhiwei and Li, Sicheng and Liao, Yiyi and Yu, Lu},
+    booktitle={IEEE Transactions on Circuits and Systems for Video Technology (TCSVT)}, 
+    title={Low-Rank Approximation for Efficient Compression of Gaussian Splatting Spherical Harmonics}, 
+    year={2026},
+    pages={1-14},
+    organization={IEEE},
+}
