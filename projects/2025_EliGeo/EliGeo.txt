@@ -1,8 +1,10 @@
 @inproceedings{liu2025eliminating,
-    author={Liu, Shanchuan and Zhu, Zhiwei and Li, Sicheng and Liao Yiyi and Yu, Lu},
-    booktitle={2025 IEEE International Conference on Visual Communications and Image Processing (VCIP)}, 
+    author={Liu, Shanchuan and Zhu, Zhiwei and Li, Sicheng and Liao, Yiyi and Yu, Lu},
+    booktitle={2025 International Conference on Visual Communications and Image Processing (VCIP)}, 
     title={Eliminating Geometric Representation Redundancy for 3D Gaussian Splat Coding}, 
     year={2025},
+    volume={},
+    number={},
     pages={1-5},
-    organization={IEEE},
+    doi={10.1109/VCIP67698.2025.11396895}
 }
