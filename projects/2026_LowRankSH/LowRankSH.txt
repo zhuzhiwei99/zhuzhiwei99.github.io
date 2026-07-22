@@ -1,10 +1,10 @@
-@inproceedings{zhu2026low,
-    author={Zhu, Zhiwei and Li, Sicheng and Liao, Yiyi and Yu, Lu},
-    journal={IEEE Transactions on Circuits and Systems for Video Technology}, 
-    title={Low-Rank Approximation for Efficient Compression of Gaussian Splatting Spherical Harmonics}, 
-    year={2026},
-    volume={},
-    number={},
-    pages={1-1},
-    doi={10.1109/TCSVT.2026.3670178}
+@article{zhu2026lowrank,
+  author={Zhu, Zhiwei and Li, Sicheng and Liao, Yiyi and Yu, Lu},
+  journal={IEEE Transactions on Circuits and Systems for Video Technology}, 
+  title={Low-Rank Approximation for Efficient Compression of Gaussian Splatting Spherical Harmonics}, 
+  year={2026},
+  volume={36},
+  number={7},
+  pages={9225-9238},
+  doi={10.1109/TCSVT.2026.3670178}
 }
